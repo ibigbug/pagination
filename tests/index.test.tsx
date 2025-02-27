@@ -635,6 +635,24 @@ describe('keyboard support', () => {
 
     expect(onChange).toHaveBeenLastCalledWith(60, 10);
   });
+
+  it('should work for enter key', () => {
+    const item50 = $('li.rc-pagination-item-50');
+    const item51 = $('li.rc-pagination-item-51');
+    const item52 = $('li.rc-pagination-item-52');
+    const nextButton = $('li.rc-pagination-next');
+    const prevButton = $('li.rc-pagination-prev');
+
+    expect(item50).toHaveClass('rc-pagination-item-active');
+    fireEvent.click(nextButton);
+    expect(item51).toHaveClass('rc-pagination-item-active');
+    fireEvent.keyDown(nextButton, { key: 'Enter', keyCode: 13, which: 13 });
+    expect(item52).toHaveClass('rc-pagination-item-active');
+    fireEvent.click(prevButton);
+    expect(item51).toHaveClass('rc-pagination-item-active');
+    fireEvent.keyDown(prevButton, { key: 'Enter', keyCode: 13, which: 13 });
+    expect(item50).toHaveClass('rc-pagination-item-active');
+  });
 });
 
 describe('select in sequence', () => {
