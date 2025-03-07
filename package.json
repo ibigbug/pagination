@@ -58,7 +58,7 @@
     "coveralls": "^3.0.6",
     "cross-env": "^7.0.0",
     "dumi": "^2.1.2",
-    "eslint": "^8.54.0",
+    "eslint": "^9.22.0",
     "eslint-plugin-jest": "^28.10.0",
     "eslint-plugin-unicorn": "^55.0.0",
     "father": "^4.0.0",
